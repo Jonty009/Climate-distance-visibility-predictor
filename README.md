@@ -4,7 +4,7 @@ To build a regression model to predict the visibility distance based on the give
 
 **Architecture**
 
-![](static\Architecture.jpg)
+![a](static/Architecture.jpg)
 
 ## **Data Description**
 
