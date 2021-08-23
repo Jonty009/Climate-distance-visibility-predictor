@@ -6,7 +6,7 @@ To build a regression model to predict the visibility distance based on the give
 
 ![](RackMultipart20210823-4-cro2b_html_3565eeb009c15c6d.jpg)
 
-**Data Description**
+## **Data Description**
 
 Data Description: This dataset predicts the visibility distance based on the different indicators as below:
 
@@ -25,7 +25,7 @@ Apart from training files, we also require a &quot;schema&quot; file from the cl
 
 Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns, and their datatype.
 
-**Data Validation**
+## **Data Validation**
 
 In this step, we perform different sets of validation on the given set of training files.
 
@@ -39,7 +39,7 @@ In this step, we perform different sets of validation on the given set of traini
 
 1. Null values in columns - If any of the columns in a file have all the values as NULL or missing, we discard such a file and move it to &quot;Bad\_Data\_Folder&quot;.
 
-**Data Insertion in Database**
+## **Data Insertion in Database**
 
 1) Database Creation and connection - Create a database with the given name passed. If the database is already created, open the connection to the database.
 
@@ -47,7 +47,7 @@ In this step, we perform different sets of validation on the given set of traini
 
 3) Insertion of files in the table - All the files in the &quot;Good\_Data\_Folder&quot; are inserted in the above-created table. If any file has invalid data type in any of the columns, the file is not loaded in the table and is moved to &quot;Bad\_Data\_Folder&quot;.
 
-**Model Training**
+## **Model Training**
 
 1) Data Export from Db - The data in a stored database is exported as a CSV file to be used for model training.
 
@@ -67,7 +67,7 @@ To train data in different clusters. The Kmeans model is trained over preprocess
 
 4) Model Selection - After clusters are created, we find the best model for each cluster. We are using two algorithms, &quot;Decision Tree Regressor&quot; and &quot;XGBoost regressor&quot;. For each cluster, both the algorithms are passed with the best parameters derived from GridSearch. We calculate the Rsquared scores for both models and select the model with the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction.
 
-**Prediction Data Description**
+## **Prediction Data Description**
 
 Client will send the data in multiple set of files in batches at a given location. Data will contain climate indicators in 10 columns.
 
@@ -75,7 +75,7 @@ Apart from prediction files, we also require a &quot;schema&quot; file from clie
 
 Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns and their datatype.
 
-**Data Validation**
+## **Data Validation**
 
 In this step, we perform different sets of validation on the given set of training files.
 
@@ -89,7 +89,7 @@ In this step, we perform different sets of validation on the given set of traini
 
 5) Null values in columns - If any of the columns in a file has all the values as NULL or missing, we discard such file and move it to &quot;Bad\_Data\_Folder&quot;.
 
-**Data Insertion in Database**
+## **Data Insertion in Database**
 
 1) Database Creation and connection - Create database with the given name passed. If the database is already created, open the connection to the database.
 
@@ -97,7 +97,7 @@ In this step, we perform different sets of validation on the given set of traini
 
 3) Insertion of files in the table - All the files in the &quot;Good\_Data\_Folder&quot; are inserted in the above-created table. If any file has invalid data type in any of the columns, the file is not loaded in the table and is moved to &quot;Bad\_Data\_Folder&quot;.
 
-**Prediction**
+## **Prediction**
 
 1) Data Export from Db - The data in the stored database is exported as a CSV file to be used for prediction.
 
